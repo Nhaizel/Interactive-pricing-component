@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./style.css" />
+
+    <title>Frontend Mentor | Interactive pricing component</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Simple, traffic-based pricing</h1>
+        <p>Sign-up for our 30-day trial. No credit card required.</p>
+      </header>
+      <!-- This is the pricing container -->
+      <main class="price-card">
+        <div class="price-container">
+          <p class="views">100K Pageviews</p>
+          <span><strong class="amount">$16.00</strong>/ month</span>
+        </div>
+        <input
+          type="range"
+          class="price-slider"
+          aria-label="pageviews-label"
+          min="1"
+          max="5"
+          step="1"
+          value="3"
+        />
+        <!-- bill display -->
+        <div class="bill-container">
+          <span>Monthly Billing</span>
+          <label class="toggle" for="monthly-bill">
+            <input type="checkbox" id="monthly-bill" />
+            <span class="slide"></span>
+          </label>
+          <div class="discount">
+            <p class="yearly-bill">Yearly Billing</p>
+            <span><span class="discount-number">25%</span> discount</span>
+          </div>
+        </div>
+      </main>
+      <!-- dispalys the features -->
+      <div class="footer">
+        <ul class="features">
+          <li>
+            <img
+              src="./images/icon-check.svg"
+              alt="a tick"
+              aria-hidden="true"
+            />
+            <span>Unlimited websites</span>
+          </li>
+          <li>
+            <img
+              src="./images/icon-check.svg"
+              alt="a tick"
+              aria-hidden="true"
+            />
+            <span>100% data ownership</span>
+          </li>
+          <li>
+            <img
+              src="./images/icon-check.svg"
+              alt="a tick"
+              aria-hidden="true"
+            />
+            <span>Email reports</span>
+          </li>
+        </ul>
+        <button type="button">Start my trial</button>
+      </div>
+    </div>
+  </body>
+  <script src="./script.js"></script>
+</html>

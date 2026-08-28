@@ -1,0 +1,347 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
+:root {
+  --green-100: hsl(174, 77%, 80%);
+  --green-400: hsl(174, 86%, 45%);
+  --orange-100: hsl(0, 89%, 96%);
+  --orange-400: hsl(15, 100%, 70%);
+  --indigo-200: hsl(226, 100%, 87%);
+  --white: hsl(0, 0%, 100%);
+  --slate-50: hsl(230, 100%, 99%);
+  --slate-200: hsl(224, 65%, 95%);
+  --slate-300: hsl(223, 50%, 87%);
+  --slate: hsl(225, 20%, 60%);
+  --slate-800: hsl(227, 35%, 25%);
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--slate-50) url(./images/bg-pattern.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-attachment: fixed;
+  font-family: "Manrope", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  margin-top: -4rem;
+}
+
+header {
+  background: url(./images/pattern-circles.svg) no-repeat center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 16rem;
+}
+
+header h1 {
+  color: var(--slate-800);
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+header p {
+  font-size: 1.1rem;
+  color: var(--slate);
+  font-weight: 600;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.price-card {
+  background-color: var(--white);
+  width: 40rem;
+  padding: 3rem;
+  padding-top: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: var(--slate-800);
+}
+
+.price-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.price-container p {
+  color: var(--slate);
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15rem;
+}
+
+.price-container span {
+  color: var(--slate);
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.price-container span strong {
+  color: var(--slate-800);
+  font-size: 2.5rem;
+}
+
+input[type="range"] {
+  width: 100%;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+}
+
+.price-slider {
+  appearance: none;
+  background: linear-gradient(
+    to right,
+    var(--green-100) 0%,
+    var(--green-100) 50%,
+    var(--slate-200) 0%,
+    var(--slate-200) 100%
+  );
+  height: 0.5rem;
+  border-radius: 0.2rem;
+  outline: none;
+}
+
+.price-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 3rem;
+  height: 3rem;
+  background-image: url(./images/icon-slider.svg);
+  background-size: 1.8rem;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-color: var(--green-400);
+  border-radius: 50%;
+  box-shadow: 1px 15px 20px var(--green-100);
+  cursor: pointer;
+}
+
+.bill-container {
+  margin-top: 1rem;
+  display: flex;
+  margin-left: 10rem;
+  align-items: center;
+}
+
+.bill-container span {
+  font-size: 0.9rem;
+  color: var(--slate);
+  font-weight: 600;
+  margin-left: 0.3rem;
+}
+
+.discount {
+  display: flex;
+  gap: 0.5rem;
+  margin-left: 2rem;
+  align-items: center;
+}
+
+.discount p {
+  font-size: 0.9rem;
+  color: var(--slate);
+  font-weight: 600;
+}
+
+.discount span {
+  font-size: 0.7rem;
+  width: fit-content;
+  padding: 0.4rem;
+  height: 1.7rem;
+  background-color: var(--orange-100);
+  border-radius: 5rem;
+  color: var(--orange-400);
+  font-weight: 700;
+}
+
+/* toogle button */
+.toggle {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 22px;
+  margin-left: 12px;
+}
+
+.toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  cursor: pointer;
+}
+
+.slide {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--slate-300);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slide:before {
+  position: absolute;
+  content: "";
+  height: 1.2rem;
+  width: 1.2rem;
+  left: 2px;
+  bottom: 4.5px;
+  background-color: var(--white);
+  -webkit-transition: 0.4s;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+input:checked + .slide {
+  background-color: var(--green-400);
+}
+
+input:checked + .slide:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+.slide {
+  width: 3rem;
+  height: 1.7rem;
+  border-radius: 2rem;
+}
+
+.footer {
+  display: flex;
+  border-top: 1px solid var(--slate-200);
+  width: 100%;
+  border-radius: 0 0 0.5rem 0.5rem;
+  padding-top: 0.2rem;
+  padding: 3rem;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--white);
+}
+
+.footer .features {
+  list-style: none;
+  line-height: 2rem;
+  color: var(--slate);
+  font-size: 0.9rem;
+}
+
+.footer .features span {
+  margin-left: 0.9rem;
+}
+
+.footer button {
+  height: 3rem;
+  width: 12rem;
+  border: none;
+  border-radius: 2rem;
+  background-color: var(--slate-800);
+  color: var(--slate-300);
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  body {
+    align-items: flex-start;
+    height: auto;
+    min-height: 100vh;
+    padding: 2rem 1.5rem;
+  }
+
+  .container {
+    width: 100%;
+    margin-top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  header {
+    height: 10rem;
+    background-size: 7rem;
+  }
+
+  header h1 {
+    font-size: 1.25rem;
+    text-align: center;
+  }
+
+  header p {
+    max-width: 16rem;
+    font-size: 0.8rem;
+    line-height: 1.8;
+    text-align: center;
+  }
+
+  .price-card {
+    width: 100%;
+    padding: 2rem 1.5rem;
+  }
+
+  .price-container {
+    flex-direction: column;
+    gap: 5rem;
+  }
+
+  .price-slider {
+    width: 100%;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    position: relative;
+    top: -9rem;
+  }
+
+  .bill-container {
+    width: 100%;
+    margin-left: 0;
+    justify-content: space-between;
+    margin-top: -3rem;
+  }
+
+  .bill-container span,
+  .discount p {
+    font-size: 0.75rem;
+  }
+
+  .discount span {
+    font-size: 0.6rem;
+    width: fit-content;
+    padding: 0.3rem;
+    display: none;
+  }
+
+  .footer {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2rem 1.5rem;
+    text-align: center;
+  }
+}
